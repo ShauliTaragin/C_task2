@@ -1,7 +1,9 @@
 #include <math.h>
 #include <stdio.h>
 #define V 10
-#define INF INT_MAX
+#define INF 2147483647
+
+int graph[V][V];
 
 void Shorted_Paths(int dist[V][V]);
 
@@ -34,7 +36,13 @@ void Shorted_Paths(int dist[V][V]){
 }
 
 int Check_Path(int src, int dest,int graph[][]) {
-    return graph[src][dest]!=0;
+    if(graph[src][dest]!=0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
 }
 
 

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "my_mat.h"
 
-#define N 10;
-int matrix[N][N];
+#define V 10
+int matrix[V][V];
 
 void main() {
     while (1) {
