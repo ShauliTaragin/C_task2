@@ -10,8 +10,8 @@ int main() {
         int num1, num2;
         scanf("%c", &command);
         if (command == 'A') {
-            for (int i = 0; i <9 ; i++) {
-                for (int j = 0; j <9 ; j++) {
+            for (int i = 0; i <V ; i++) {
+                for (int j = 0; j <V ; j++) {
                     matrix[i][j]=0; // initializing the matrix to be all 0 just in case user didnt input well
                 }
             }
@@ -32,7 +32,7 @@ int main() {
             else{
                 printf("-1\n");
             }
-        } else { //command is 'D'
+        }else { //command is 'D'
             break;
         }
     }

@@ -10,8 +10,8 @@ int minimum(int a, int b);
 
 void Create_Matrix(int graph [V][V]) {
     int get_num;
-    for (int i = 1; i <=10 ; i++) {
-        for (int j = 1; j <=10 ; j++) {
+    for (int i = 0; i <V ; i++) {
+        for (int j = 0; j <V ; j++) {
             scanf("%d" , &get_num);
             graph[i][j] = get_num;
         }
