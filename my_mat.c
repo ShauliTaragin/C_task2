@@ -5,44 +5,37 @@
 
 int graph[V][V];
 
-void Shorted_Paths(int dist[V][V]);
+int minimum(int a, int b);
 
 void Floyd_Warshall_algorithm(int graph[V][V]){  // Time Complexity: O(V^3)
-    int dist[V][V], i, j, k;
-    for (i = 0; i < V; i++)
-        for (j = 0; j < V; j++)
-            dist[i][j] = graph[i][j];
-    for (k = 0; k < V; k++){
-        for (i = 0; i < V; i++){
-            for (j = 0; j < V; j++){
-                if (dist[i][k] + dist[k][j] < dist[i][j])
-                    dist[i][j] = dist[i][k] + dist[k][j];
+    for (int k = 0; k < V; k++){
+        for (int i = 0; i < V; i++){
+            for (int j = 0; j < V; j++){
+                if (graph[i][k] != 0 && graph[k][j] != 0 && graph[i][j] == 0) {
+                    graph[i][j] = graph[i][k] + graph[k][j];
+                }
+                if (graph[i][k] != 0 && graph[k][j] != 0 && graph[i][j] != 0) {
+                    graph[i][j] = minimum(graph[i][j], graph[i][k] + graph[k][j]);
+                }
             }
         }
     }
-    Shorted_Paths(dist);
+
+int Short_Path(int a, int b, graph[V][V]) {
+    return graph[a][b];
 }
 
-void Shorted_Paths(int dist[V][V]){
-    for (int i = 0; i < V; i++){
-        for (int j = 0; j < V; j++){
-            if (dist[i][j] == INF)
-                printf("%7s", "INF");
-            else
-                printf ("%7d", dist[i][j]);
-        }
-        printf("\n");
-    }
-}
-
-int Check_Path(int src, int dest,int graph[][]) {
+int Check_Path(int src, int dest,int graph[V][V]) {
     if(graph[src][dest]!=0){
         return 1;
     }
     else{
         return 0;
     }
-    
+}
+int minimum(int a, int b){
+    if(a < b) return a;
+    return b;
 }
 
 
