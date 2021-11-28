@@ -27,10 +27,10 @@ int main() {
         } else if (command == 'C') {
             scanf( "%d %d" , &num1 , &num2);
             if(Shortest_Path(num1,num2,matrix)!=0){
-                printf("%d" , Shortest_Path(num1,num2,matrix));
+                printf("%d\n" , Shortest_Path(num1,num2,matrix));
             }
             else{
-                printf("-1");
+                printf("-1\n");
             }
         } else { //command is 'D'
             break;
