@@ -4,7 +4,7 @@
 #define V 10
 int matrix[V][V];
 
-void main() {
+int main() {
     while (1) {
         char command;
         int num1, num2;
@@ -36,4 +36,5 @@ void main() {
             break;
         }
     }
+    return 0;
 }
