@@ -18,14 +18,20 @@ void main() {
             Create_Matrix(matrix);
         } else if (command == 'B') {
             scanf( "%d" , "%d" , num1 , num2);
-            if(Check_Path(num1,num2,matrix) == 1){
+            if(Check_Path(num1,num2,matrix)){
                 printf("True\n");
             }
             else{
                 printf("False\n");
             }
         } else if (command == 'C') {
-
+            scanf( "%d" , "%d" , num1 , num2);
+            if(Shore      ){
+                printf();
+            }
+            else{
+                printf("-1");
+            }
         } else { //command is 'D'
             break;
         }
