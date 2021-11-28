@@ -17,7 +17,7 @@ void main() {
             }
             Create_Matrix(matrix);
         } else if (command == 'B') {
-            scanf( "%d" , "%d" , num1 , num2);
+            scanf( "%d %d" , &num1 , &num2);
             if(Check_Path(num1,num2,matrix)){
                 printf("True\n");
             }
@@ -25,9 +25,9 @@ void main() {
                 printf("False\n");
             }
         } else if (command == 'C') {
-            scanf( "%d" , "%d" , num1 , num2);
-            if(Shore      ){
-                printf();
+            scanf( "%d %d" , &num1 , &num2);
+            if(Shortest_Path(num1,num2,matrix)!=0){
+                printf("%d" , Shortest_Path(num1,num2,matrix));
             }
             else{
                 printf("-1");
@@ -36,5 +36,4 @@ void main() {
             break;
         }
     }
-    return 0;
 }
