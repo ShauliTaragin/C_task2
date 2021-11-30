@@ -1,27 +1,21 @@
-CC = gcc
-AR = ar -rcs
-Flags = -Wall -g
-Objects_mat  = my_mat.o
-Objects_main = main.o
-
-all: connections matlib
-
-connections: $(Objects_main) makematrix.a my_mat.h
-	$(CC) $(Flags) -o connections $(Objects_main) makematrix.a
-
-matlib: makematrix.a
-
-makematrix.a: $(Objects_mat)
-	$(AR) makematrix.a $(Objects_mat)
-
-main.o: main.c my_mat.h
-	$(CC) $(Flags) -c main.c
-	
-my_mat.o: my_mat.c 
-	$(CC) $(Flags) -c my_mat.c
 
 .PHONY: clean all
 
+all: connections matrixlib
+
+connections: main.o my_matlib.a my_mat.h
+	gcc -Wall -g -o connections main.o my_matlib.a
+
+matrixlib: my_matlib.a
+my_matlib.a: my_mat.o
+	ar -rcs my_matlib.a my_mat.o
+
+my_mat.o: my_mat.c
+	gcc -Wall -g -c my_mat.c
+
+main.o: main.c my_mat.h
+	gcc -Wall -g -c main.c
+
+
 clean:
 	rm -f *.o *.a *.so connections
-
