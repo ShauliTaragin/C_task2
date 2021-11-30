@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include "my_mat.h"
 #define V 10
-#define INF 2147483647
 
 int graph[V][V];
 
@@ -23,11 +22,13 @@ void Floyd_Warshall_algorithm(int graph[V][V]){  // Time Complexity: O(V^3)
     for (int k = 0; k < V; k++){
         for (int i = 0; i < V; i++){
             for (int j = 0; j < V; j++){
-                if (graph[i][k] != 0 && graph[k][j] != 0 && graph[i][j] == 0) {
-                    graph[i][j] = graph[i][k] + graph[k][j];
-                }
-                if (graph[i][k] != 0 && graph[k][j] != 0 && graph[i][j] != 0) {
-                    graph[i][j] = minimum(graph[i][j], graph[i][k] + graph[k][j]);
+                if(i!=j){
+                    if (graph[i][k] != 0 && graph[k][j] != 0 && graph[i][j] == 0) {
+                        graph[i][j] = graph[i][k] + graph[k][j];
+                    }
+                    if (graph[i][k] != 0 && graph[k][j] != 0 && graph[i][j] != 0) {
+                        graph[i][j] = minimum(graph[i][j], graph[i][k] + graph[k][j]);
+                    }
                 }
             }
         }
