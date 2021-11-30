@@ -32,7 +32,7 @@ int main() {
             else{
                 printf("-1\n");
             }
-        }else { //command is 'D'
+        }else if(command == 'D'){ //command is 'D'
             break;
         }
     }
