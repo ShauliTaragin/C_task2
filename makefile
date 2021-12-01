@@ -1,13 +1,13 @@
 CC = gcc
 AR = ar -rcs
 Flags = -Wall -g
-Objects_mat  = my_mat.o
+Objects_mat = my_mat.o
 Objects_main = main.o
 
 all: connections my_lib
 
 connections: $(Objects_main) makematrix.a 
-	$(CC) $(Flags) $(Objects_main) makematrix.a -o connections 
+	$(CC) $(Flags) connections -o $(Objects_main) makematrix.a  
 my_lib: makematrix.a
 makematrix.a: $(Objects_mat)
 	$(AR) makematrix.a $(Objects_mat) -lm
