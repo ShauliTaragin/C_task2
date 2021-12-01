@@ -7,13 +7,12 @@ int matrix[V][V];
 int num1, num2;
 
 int main(void) {
-    int breaky=1;
-    while (breaky==1) {
-        char command =getchar();
+    char command =getchar();
+    while (command!='D') {
         if (command == 'A') {
             for (int i = 0; i <V ; i++) {
                 for (int j = 0; j <V ; j++) {
-                    matrix[i][j]=0; // initializing the matrix to be all 0 just in case user didnt input well
+                    matrix[i][j]=0; 
                 }
             }
             Create_Matrix(matrix);
@@ -35,9 +34,6 @@ int main(void) {
             else{
                 printf("-1\n");
             }
-        }
-        else if(command == 'D'){ //command is 'D'
-            breaky=0;
         }
     }
     return 0;
