@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 #include "my_mat.h"
 #define V 10
